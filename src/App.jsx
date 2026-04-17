@@ -50,12 +50,12 @@ function App() {
   return (
     <>
     <div
-    className='min-h-screen '
+    className='min-h-screen w-full '
     >
 
    
     <div
-   className='max-w-7xl max-auto  '
+  
    >
       <Scroll />
       <Header />

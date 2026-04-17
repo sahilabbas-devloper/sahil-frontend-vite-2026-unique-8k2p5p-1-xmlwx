@@ -45,7 +45,7 @@ function Profile() {
             "https://www.sloshout.com/blog/wp-content/uploads/wedding-photographers-the-amanverse-studios-couple-shot-1_15_449054-168567082220567.jpeg",
            "https://cdn0.weddingwire.in/vendor/9168/3_2/640/jpg/wedding-photographers-smart-clicks-cinematography-couple-shot-2_15_439168-168292937836599.jpeg",
             "https://images.prismic.io/memoriesdesigner/bec7c8eb-3c4d-436e-aacc-d5b0cb62f44d_MD1_2177.jpg",
-            "https://irichphotography.com/wp-content/uploads/2024/01/PRE-WEDDING-SHOOT-BANGALORE-8.jpg",
+            "https://weddingphotographybysf.com/wp-content/uploads/2024/09/photo-bridal-3-scaled.webp",
             "https://dstudios.in/wp-content/uploads/2024/08/Kerala-best-place-for-pre-wedding-shoot-in-india-scaled.webp",
             "https://www.studiomemorylane.com/wp-content/uploads/2019/06/Ethnic-Punjabi-wedding-couple-photography.jpg",
             "https://www.weddingphotoplanet.com/admin_image/wid/hero_image7482552391753536143Best-Wedding-Photographer.jpg"
