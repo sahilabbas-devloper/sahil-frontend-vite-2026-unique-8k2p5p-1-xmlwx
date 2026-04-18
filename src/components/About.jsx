@@ -8,14 +8,14 @@ function About() {
   return (
     <div>
       <div>
-        <section id='About' className='bg-orange-50 w-full py-16 px-4 flex flex-col md:flex-row items-center gap-10'>
+        <section id='About' className='bg-orange-50 w-full py-16 px-4 flex flex-col md:flex-row items-center gap-50'>
           
           <div>
             <motion.div
               initial={{ opacity: 0, right: 50 }}
               whileInView={{ opacity: 1, left: 20 }}
               transition={{ duration: 0.8 }}
-             className='w-full max-w-sm md:max-w-md rounded-2xl shadow-lg overflow-hidden'
+             className='w-full h-100 max-w-sm md:max-w-md rounded-2xl shadow-lg overflow-hidden'
             >
               <img
                className='w-full h-auto object-cover'
