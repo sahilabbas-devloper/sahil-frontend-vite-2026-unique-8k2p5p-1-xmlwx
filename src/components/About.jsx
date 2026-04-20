@@ -27,7 +27,7 @@ function About() {
               initial={{ opacity: 0, right: 50 }}
               whileInView={{ opacity: 1, right: 20 }}
               transition={{ duration: 0.8 }}
-              className='w-full max-w-xl text-sm md:text-base'
+              className='w-full  text-sm md:text-base'
             >
               <div>
 

@@ -7,9 +7,9 @@ function Profile() {
   <div>
     <section
       id="Profile"
-      className="bg-orange-50 w-full py-16 flex flex-col items-center"
+      className="bg-orange-50 w-auto py-16 flex flex-col items-center  "
     >
-      <div className="w-full max-w-7xl px-4">
+      <div className="w-full  px-4">
 
         {/* Heading */}
         <div className="flex flex-col items-center text-center mt-10">
@@ -22,7 +22,7 @@ function Profile() {
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mt-8">
+        <div className="flex w-full flex-wrap justify-center gap-4 mt-8">
           <button className="bg-white hover:bg-amber-300 hover:text-white rounded-3xl font-semibold px-6 py-2">
             All Photos
           </button>
@@ -38,7 +38,7 @@ function Profile() {
         </div>
 
         {/* Images */}
-        <div className="flex flex-wrap justify-center gap-5 mt-10">
+        <div className="flex w-full flex-wrap justify-center gap-5 mt-10">
 
           {[
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAD7jNF3uA2_MN8xV0zt_lDVOI34s0ur564g&s",

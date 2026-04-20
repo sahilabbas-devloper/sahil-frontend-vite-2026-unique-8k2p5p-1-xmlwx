@@ -29,14 +29,14 @@ const [orders,setorders] = useState([])
       id="Oders"
       className="bg-orange-50 w-full py-16 flex justify-center"
     >
-      <div className="w-full max-w-7xl px-4">
+      <div className="w-full  px-4">
 
         {/* Heading */}
         <div className="flex flex-col items-center text-center mb-10">
           <h1 className="text-3xl md:text-4xl text-black font-bold">
             Order <span className="text-pink-400">Details</span>
           </h1>
-          <p className="text-slate-500 text-sm mt-2 max-w-xl">
+          <p className="text-slate-500 text-sm mt-2 ">
             Comprehensive wedding photography services tailored to your needs. See your orders below.
           </p>
         </div>

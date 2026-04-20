@@ -50,7 +50,7 @@ function App() {
   return (
     <>
     <div
-    className='min-h-screen w-full '
+    className='overflow-x-hidden'
     >
 
    
