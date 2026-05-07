@@ -8,7 +8,7 @@ function About() {
   return (
     <div>
       <div>
-        <section id='About' className='bg-orange-50 w-full py-16 px-4 flex flex-col md:flex-row items-center gap-50'>
+        <section id='About' className='bg-orange-50 w-full py-16 px-4 flex flex-col md:flex-row items-center gap-50 relative'>
           
           <div>
             <motion.div

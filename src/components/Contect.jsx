@@ -51,6 +51,8 @@ function Contect() {
                   <div className='flex flex-col'>
                     <label className='mb-1' >Your Name</label>
                     <input type="name"
+                    required
+                    value={name}
                       className='outline-none border rounded-xs p-1 border-gray-400 text-sm'
                       placeholder='Enter your name'
                       onChange={(e) => setname(e.target.value)}
@@ -59,6 +61,8 @@ function Contect() {
                   <div className='flex flex-col'>
                     <label className='mb-1' >Your Email</label>
                     <input type="email"
+                     required
+                    value={email}
                       className='outline-none border rounded-xs p-1 border-gray-400 text-sm'
                       placeholder='Enter your email'
                       onChange={(e) => setemail(e.target.value)}
@@ -69,6 +73,8 @@ function Contect() {
                   <div className='flex flex-col'>
                     <label className='mb-1'>Wedding Date</label>
                     <input type="datetime-local"
+                     required
+                    value={date}
                       className='outline-none border rounded-xs p-1 border-gray-400 text-sm mb-3'
                       onChange={(e) => setdate(e.target.value)}
                     />
@@ -76,7 +82,9 @@ function Contect() {
                 </div>
                 <label className='mb-1'>Packages</label>
                 <div>
-                  <select className=' w-full outline-none border rounded-xs p-1 border-gray-400 text-sm mb-3' value={packages} onChange={(e) => setpackages(e.target.value)}  >
+                  <select 
+                  required
+                  className=' w-full outline-none border rounded-xs p-1 border-gray-400 text-sm mb-3' value={packages} onChange={(e) => setpackages(e.target.value)}  >
                     <option value="">Selectpackage</option>
                     <option value="899rs">899rs</option>
                     <option value="999rs">999rs</option>
@@ -88,6 +96,8 @@ function Contect() {
                 </div>
                 <div>
                   <input type="massage"
+                   required
+                    value={massage}
                     placeholder='send massage'
                     className='w-full h-24 border rounded-xs p-2 text-sm mb-3'
                      maxLength={50}

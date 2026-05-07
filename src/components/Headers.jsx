@@ -36,7 +36,7 @@ function Headers() {
       </div>
     </header>
    
-   <div className={`w-full transition-transform duration-500 ease-in-out  ${open ? "translate-y-0" : "-translate-y-150"} z-10 absolute flex-col flex p-4 gap-2 bg-white mt-16`}>
+   <div className={`w-full transition-transform duration-500 ease-in-out  ${open ? "translate-y-0" : "-translate-y-150"} z-10 fixed flex-col flex p-4 gap-2 bg-white mt-16`}>
      <nav className=' flex flex-col translate-y-0  items-center h-auto gap-5 text-md font-bold'>
 
           <Link className='hover:text-amber-300 text-gray-600' to='/Hero'>Home</Link>

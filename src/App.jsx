@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import './App.css'
+import './index.css'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Header from "./components/Headers";
 import Hero from "./components/Hero"
