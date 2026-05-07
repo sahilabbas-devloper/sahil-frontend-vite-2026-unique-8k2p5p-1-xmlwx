@@ -17,7 +17,7 @@ function Oders() {
   const fetchdata = async () => {
     setopen(true)
     try {
-      const res = await axios.post(`${BASE_URL}/api/details/recive`,{ name})
+      const res = await axios.post(`${BASE_URL}/api/orders/recive`,{ name})
 
       toast(res.data.message);
       setorders(res.data.neworders)
