@@ -21,7 +21,7 @@ function Oders() {
 
       toast(res.data.message);
       setorders(res.data.neworders)
-     
+     console.log(res.data.neworders)
     } catch (error) {
         toast.error(error?.response?.data.message)
       console.log(error)
@@ -68,13 +68,14 @@ function Oders() {
               >
                 Find
 
-                {open && (
-                                    <div className='fixed inset-0  flex items-center justify-center z-50'>
+               {open && (
+                    <div className='fixed inset-0 bg-black/30 flex items-center justify-center z-50'>
 
-                                        <div className='w-14 h-14 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin'></div>
-                                    </div>
+                      <div className='w-14 h-14 border-4 border-white border-t-transparent rounded-full animate-spin'></div>
 
-                                )}
+                    </div>
+
+                  )}
               </button>
             </div>
 
@@ -87,7 +88,7 @@ function Oders() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
                   viewport={{ once: true }}
-                  className=" rounded-xl  shadow-lg p-4 flex flex-col  w-auto sm:w-full md:w-full lg:w-full overflow-hidden bg-linear-to-r from-[#f2f2fa] via-[#f8efdb] to-[#efecf3] "
+                  className=" rounded-xl  shadow-lg p-4 flex flex-col  w-auto sm:w-full md:w-full lg:w-full overflow-hidden bg-linear-to-r from-[#ffffff] via-[#eceae3] to-[#ebdfac] "
                 >
                    
                   <div>
@@ -112,7 +113,9 @@ function Oders() {
                   </h3>
 
                   <h3 className="mb-2 font-bold flex gap-2 pb-1">
-                    Status: <span className="font-semibold bg-amber-200 rounded-md text-amber-800 flex items-center justify-center p-1 text-sm">{orders.status}⏳</span>
+                    Status:{orders.status == "pending" && ( <span className="font-semibold bg-amber-500 rounded-md text-white flex items-center justify-center p-1 text-sm">{orders.status}</span>)}
+                    {orders.status == "confirmed" &&  ( <span className="font-semibold bg-green-600 rounded-md text-white flex items-center justify-center p-1 text-sm">{orders.status}</span>)}
+                    {orders.status == "Declined" && ( <span className="font-semibold bg-red-600 rounded-md text-white flex items-center justify-center p-1 text-sm">{orders.status}</span>)}
                   </h3>
                   </div>
 
