@@ -60,15 +60,15 @@ function Oders() {
             </div>
 
 
-            <div className="flex justify-center mt-10 mb-20 gap-2 p-2">
-              <div className='flex flex-col gap-1'>
+            <div className="flex justify-center mt-10 mb-20 gap-2 p-2 w-full">
+              <div className='flex flex-col gap-1 '>
                 <input type="text"
-                  className={`${alert ? "border-2 border-red-700" : "border-2 border-blue-700"} bg-white outline-none w-70 h-10  p-4 shadow-xl`}
+                  className={`${alert ? "border-2 border-red-700" : "border-2 border-green-800"} bg-white outline-none rounded-2xl w-55 h-10  p-4 shadow-xl`}
                   placeholder='Enter your name'
                   value={name}
                   onChange={(e) => {
                     setname(e.target.value)
-                    if (e.target.value === "") {
+                    if (e.target.value) {
                       setalert(false)
                     }
                   }}
