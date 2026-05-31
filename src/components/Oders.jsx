@@ -9,26 +9,32 @@ const BASE_URL = import.meta.env.VITE_API_URL;
 
 function Oders() {
 
-   const [name, setname] = useState('')
-    const [open, setopen] = useState(false)
+  const [name, setname] = useState('')
+  const [alert, setalert] = useState()
+  const [open, setopen] = useState(false)
   const [orders, setorders] = useState()
 
 
   const fetchdata = async () => {
+
+    if (name === "") {
+      setalert(true)
+      return
+    }
     setopen(true)
     try {
-      const res = await axios.post(`${BASE_URL}/api/orders/recive`,{ name})
+      const res = await axios.post(`${BASE_URL}/api/orders/recive`, { name })
 
       toast(res.data.message);
       setorders(res.data.neworders)
-     console.log(res.data.neworders)
+      console.log(res.data.neworders)
     } catch (error) {
-        toast.error(error?.response?.data.message)
+      toast.error(error?.response?.data.message)
       console.log(error)
-    }finally{
+    } finally {
       setopen(false)
     }
- setname("")
+    setname("")
 
   }
 
@@ -36,7 +42,7 @@ function Oders() {
   return (
     <div>
       <div>
-         <Toaster />
+        <Toaster />
         <section
           id="Oders"
           className="bg-orange-50 w-screen py-16 flex justify-center"
@@ -54,50 +60,59 @@ function Oders() {
             </div>
 
 
-            <div className="flex justify-center mt-10 mb-20 gap-2">
-              <input type="text"
-                className='bg-blue-50 w-70 h-10 outline-none p-4 shadow-xl'
-                placeholder='Enter your name'
-                value={name}
-                onChange={(e) => setname(e.target.value)}
-              />
+            <div className="flex justify-center mt-10 mb-20 gap-2 p-2">
+              <div className='flex flex-col gap-1'>
+                <input type="text"
+                  className={`${alert ? "border-2 border-red-700" : "border-2 border-blue-700"} bg-white outline-none w-70 h-10  p-4 shadow-xl`}
+                  placeholder='Enter your name'
+                  value={name}
+                  onChange={(e) => {
+                    setname(e.target.value)
+                    if (e.target.value === "") {
+                      setalert(false)
+                    }
+                  }}
+                />
+                {alert == true && <span className='text-red-700 font-semibold'>Fill this field !</span>}
+              </div>
+
               <button
                 onClick={fetchdata}
                 className="bg-pink-500 text-white hover:bg-pink-600 
-                       rounded-3xl shadow-xl font-semibold px-8 py-2"
+                       rounded-3xl shadow-xl font-semibold  w-20 h-10"
               >
                 Find
 
-               {open && (
-                    <div className='fixed inset-0 bg-black/30 flex items-center justify-center z-50'>
+                {open && (
+                  <div className='fixed inset-0 bg-black/30 flex items-center justify-center z-50'>
 
-                      <div className='w-14 h-14 border-4 border-white border-t-transparent rounded-full animate-spin'></div>
+                    <div className='w-14 h-14 border-4 border-white border-t-transparent rounded-full animate-spin'></div>
 
-                    </div>
+                  </div>
 
-                  )}
+                )}
               </button>
             </div>
 
             {/* Orders Cards */}
-           <div className="flex flex-col w-full overflow-hidden p-4 gap-6">
-                
-           {   orders &&  <motion.div
-                  
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4 }}
-                  viewport={{ once: true }}
-                  className=" rounded-xl  shadow-lg p-4 flex flex-col  w-auto sm:w-full md:w-full lg:w-full overflow-hidden bg-linear-to-r from-[#ffffff] via-[#eceae3] to-[#ebdfac] "
-                >
-                   
-                  <div>
-                    <h1 className="mb-4 text-md font-bold text-gray-500 ">
-                      Your Order
-                    </h1>
-                  </div>
+            <div className="flex flex-col w-full overflow-hidden p-4 gap-6">
 
-                  <div className='md:flex md:flex-row sm:flex-col gap-5 w-auto justify-evenly overflow-hidden'>
+              {orders && <motion.div
+
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                viewport={{ once: true }}
+                className=" rounded-xl  shadow-lg p-4 flex flex-col  w-auto sm:w-full md:w-full lg:w-full overflow-hidden bg-linear-to-r from-[#ffffff] via-[#eceae3] to-[#ebdfac] "
+              >
+
+                <div>
+                  <h1 className="mb-4 text-md font-bold text-gray-500 ">
+                    Your Order
+                  </h1>
+                </div>
+
+                <div className='md:flex md:flex-row sm:flex-col gap-5 w-auto justify-evenly overflow-hidden'>
 
                   <h3 className="mb-2 font-bold flex gap-2  pb-1">
                     Name:  <span className="font-semibold "> {orders.name}</span>
@@ -113,14 +128,14 @@ function Oders() {
                   </h3>
 
                   <h3 className="mb-2 font-bold flex gap-2 pb-1">
-                    Status:{orders.status == "pending" && ( <span className="font-semibold bg-amber-500 rounded-md text-white flex items-center justify-center p-1 text-sm">{orders.status}</span>)}
-                    {orders.status == "confirmed" &&  ( <span className="font-semibold bg-green-600 rounded-md text-white flex items-center justify-center p-1 text-sm">{orders.status}</span>)}
-                    {orders.status == "Declined" && ( <span className="font-semibold bg-red-600 rounded-md text-white flex items-center justify-center p-1 text-sm">{orders.status}</span>)}
+                    Status:{orders.status == "pending" && (<span className="font-semibold bg-amber-500 rounded-md text-white flex items-center justify-center p-1 text-sm">{orders.status}</span>)}
+                    {orders.status == "confirmed" && (<span className="font-semibold bg-green-600 rounded-md text-white flex items-center justify-center p-1 text-sm">{orders.status}</span>)}
+                    {orders.status == "Declined" && (<span className="font-semibold bg-red-600 rounded-md text-white flex items-center justify-center p-1 text-sm">{orders.status}</span>)}
                   </h3>
-                  </div>
+                </div>
 
-                </motion.div>}
-            
+              </motion.div>}
+
             </div>
 
             {/* Button */}

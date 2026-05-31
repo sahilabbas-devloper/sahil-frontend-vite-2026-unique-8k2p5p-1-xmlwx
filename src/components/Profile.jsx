@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 
 function Profile() {
              const [activepage ,setactivepage] = useState("allphoto")
+          
 
   return (
     <div>
@@ -28,22 +29,22 @@ function Profile() {
         <div className="flex w-full flex-wrap justify-center gap-4 mt-8">
           <button 
           onClick={() => setactivepage("allphoto")}
-          className="bg-white hover:bg-amber-300 hover:text-white rounded-3xl font-semibold px-6 py-2">
+          className={` ${activepage == "allphoto"  ? "bg-amber-300 text-white": "bg-white"}  hover:bg-amber-300 hover:text-white rounded-3xl font-semibold px-6 py-2`}>
             All Photos
           </button>
           <button
            onClick={() => setactivepage("Weddings")}
-          className="bg-white hover:bg-amber-300 hover:text-white rounded-3xl font-semibold px-6 py-2">
+          className={` ${activepage == "Weddings"  ? "bg-amber-300 text-white": "bg-white"}  hover:bg-amber-300 hover:text-white rounded-3xl font-semibold px-6 py-2`}>
             Weddings
           </button>
           <button
            onClick={() => setactivepage("Engagements")}
-          className="bg-white hover:bg-amber-300 hover:text-white rounded-3xl font-semibold px-6 py-2">
+          className={`${activepage == "Engagements"  ? "bg-amber-300 text-white": "bg-white"}  hover:bg-amber-300 hover:text-white rounded-3xl font-semibold px-6 py-2`}>
             Engagements
           </button>
           <button 
            onClick={() => setactivepage("Pre-Wedding")}
-          className="bg-white hover:bg-amber-300 hover:text-white rounded-3xl font-semibold px-6 py-2">
+          className={`${activepage == "Pre-Wedding"  ? "bg-amber-300 text-white": "bg-white"}  hover:bg-amber-300 hover:text-white rounded-3xl font-semibold px-6 py-2`}>
             Pre-Wedding
           </button>
         </div>
