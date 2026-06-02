@@ -1,16 +1,64 @@
-# React + Vite
+📸 Photography E-Commerce Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack e-commerce platform for a photography business — with cart, order management, and an email-based owner confirm/decline system.
 
-Currently, two official plugins are available:
+🌐 Live Demo: photography-web-un.vercel.app
+📁 GitHub: github.com/sahil/photography-ecom
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ Features
 
-## React Compiler
+🛒 Shopping Cart — Add/remove products, quantity management
+📦 Order Management — Customer places order, owner gets notified via email
+✅ Owner Confirm/Decline Flow — Owner clicks confirm or decline button directly from email (powered by Resend)
+📧 Email Notifications — Automated transactional emails using Resend API
+🖼️ Product Gallery — Browse photography products/prints/services
+📱 Responsive Design — Works seamlessly on all devices
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+🛠️ Tech Stack
+LayerTechnologyFrontendReact.js, Tailwind CSS, AxiosBackendNode.js, Express.jsDatabaseMongoDB, MongooseEmailResend APIDeploymentVercel (Frontend), Render (Backend)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🔄 Order Flow
+Customer places order
+       ↓
+Owner receives email with order details
+       ↓
+Owner clicks [Confirm] or [Decline] in email
+       ↓
+Customer gets confirmation/rejection email
+       ↓
+Order status updated in DB
+
+🚀 Getting Started
+Installation
+bashgit clone https://github.com/sahil/photography-ecom.git
+cd photography-ecom
+
+# Backend
+cd backend && npm install
+
+# Frontend
+cd ../frontend && npm install
+Environment Variables
+envPORT=5000
+MONGO_URI=your_mongodb_uri
+RESEND_API_KEY=your_resend_key
+OWNER_EMAIL=owner@example.com
+CLIENT_URL=http://localhost:5173
+Run Locally
+bash# Backend
+cd backend && npm run dev
+
+# Frontend
+cd frontend && npm run dev
+
+🧠 Key Learnings
+
+Built a real-world business problem solution: email-based order approval system
+Integrated Resend API for transactional emails with action buttons
+Designed owner workflow that requires zero dashboard login
+
+
+👨‍💻 Author
+Sahil — Fresher MERN Stack Developer
+📧 Sa9300421@gmail.com | 📱 +91 7080254021
